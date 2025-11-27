@@ -69,5 +69,8 @@
     "stylelint-config-recess-order": "4.4.0",
     "stylelint-config-standard": "36.0.0",
     "stylelint-prettier": "5.0.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
   }
 }
