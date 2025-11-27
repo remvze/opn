@@ -6,9 +6,6 @@ import cloudflare from '@astrojs/cloudflare';
 
 export default defineConfig({
   adapter: cloudflare(),
-  experimental: {
-    session: true,
-  },
   integrations: [react(), sitemap()],
   output: 'server',
   site: 'https://opn.bio',
