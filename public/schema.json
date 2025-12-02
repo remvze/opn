@@ -1,0 +1,162 @@
+{
+  "$id": "https://opn.bio/schema.json",
+  "description": "Schema for bio.json profile configuration.",
+  "title": "OPN Profile Schema",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "sections": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object",
+            "properties": {
+              "items": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "date": {
+                      "type": "string"
+                    },
+                    "description": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "list"
+              }
+            },
+            "required": [
+              "items",
+              "title",
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "content": {
+                "type": "string"
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "text"
+              }
+            },
+            "required": [
+              "content",
+              "title",
+              "type"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "links": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "title": {
+                      "type": "string"
+                    },
+                    "url": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "title",
+                    "url"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "links"
+              }
+            },
+            "required": [
+              "links",
+              "title",
+              "type"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      }
+    },
+    "style": {
+      "type": "object",
+      "properties": {
+        "font": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "serif"
+            },
+            {
+              "type": "string",
+              "const": "sans-serif"
+            }
+          ]
+        },
+        "theme": {
+          "anyOf": [
+            {
+              "type": "string",
+              "const": "dark"
+            },
+            {
+              "type": "string",
+              "const": "light"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "version": {
+      "type": "number",
+      "const": 1
+    }
+  },
+  "required": [
+    "description",
+    "name",
+    "version"
+  ],
+  "additionalProperties": false
+}
