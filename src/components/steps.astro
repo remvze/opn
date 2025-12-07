@@ -1,0 +1,166 @@
+---
+import Section from './section.astro';
+---
+
+<Section title="How to Get Started?">
+  <ol class="steps">
+    <li>
+      <div class="count">
+        <span class="one">01</span>
+      </div>
+      <h3 class="title">Create a repository</h3>
+      <p class="desc">
+        Create a public repository in your GitHub account called
+        <code>.opn</code>
+      </p>
+    </li>
+    <li>
+      <div class="count">
+        <span class="two">02</span>
+      </div>
+      <h3 class="title">Add a file</h3>
+      <p class="desc">
+        Add a <code>bio.json</code> file inside the your <code>.opn</code> repository.
+        You can copy the base from <a
+          href="https://github.com/remvze/opn/blob/main/template/bio.json"
+          rel="noreferrer"
+          target="_blank">here</a
+        >.
+      </p>
+    </li>
+    <li>
+      <div class="count">
+        <span class="three">03</span>
+      </div>
+      <h3 class="title">Enter your info</h3>
+      <p class="desc">
+        Based on the <a
+          href="https://github.com/remvze/opn/blob/main/docs/schema.md"
+          rel="noreferrer"
+          target="_blank">schema</a
+        >, fill <code>bio.json</code> with your information.
+      </p>
+    </li>
+  </ol>
+
+  <p class="outro">
+    That’s it! Your bio page will be generated automatically and available at <code
+      >opn.bio/@your-github-username</code
+    >.
+  </p>
+</Section>
+
+<style>
+  p {
+    line-height: 1.7;
+    color: var(--color-foreground-subtle);
+
+    & strong {
+      font-weight: 500;
+      color: var(--color-foreground);
+    }
+
+    & code {
+      display: inline-block;
+      padding: 2px 8px;
+      margin: 0 2px;
+      font-family: var(--font-mono);
+      font-size: var(--font-xsm);
+      color: var(--color-foreground);
+      background: var(--color-neutral-100);
+      border-radius: 8px;
+      box-shadow: inset 0 -1px 0 var(--color-neutral-300);
+    }
+
+    & a {
+      color: var(--color-foreground);
+      text-decoration: underline dotted #ff6b6b;
+      text-underline-offset: 4px;
+
+      &.mono {
+        font-family: var(--font-mono);
+        font-size: var(--font-sm);
+      }
+    }
+  }
+
+  .steps {
+    margin-bottom: 32px;
+    list-style: none;
+
+    & li {
+      color: var(--color-foreground-subtle);
+
+      & .count {
+        margin-bottom: 12px;
+
+        & span {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 40px;
+          height: 40px;
+          font-family: var(--font-mono);
+          font-size: var(--font-sm);
+          font-weight: 500;
+          color: var(--color-foreground);
+          background: linear-gradient(transparent, var(--color-neutral-100));
+          border-radius: 12px;
+
+          &.one {
+            color: #ff922b;
+            box-shadow: inset 0 -1px 0 rgb(255 146 43 / 75%);
+          }
+
+          &.two {
+            color: #f06595;
+            box-shadow: inset 0 -1px 0 rgb(240 101 149 / 75%);
+          }
+
+          &.three {
+            color: #51cf66;
+            box-shadow: inset 0 -1px 0 rgb(81 207 102 / 75%);
+          }
+        }
+      }
+
+      &:not(:last-of-type) {
+        margin-bottom: 32px;
+      }
+
+      & .title {
+        margin-bottom: 4px;
+        font-weight: 500;
+        color: var(--color-foreground);
+      }
+
+      & .desc {
+        max-width: 375px;
+        text-wrap: balance;
+      }
+
+      & strong {
+        font-weight: 500;
+        color: var(--color-foreground);
+      }
+
+      & code {
+        display: inline-block;
+        padding: 2px 8px;
+        margin: 0 2px;
+        font-family: var(--font-mono);
+        font-size: var(--font-xsm);
+        color: var(--color-foreground);
+        background: var(--color-neutral-100);
+        border-radius: 8px;
+        box-shadow: inset 0 -1px 0 var(--color-neutral-300);
+      }
+
+      & a {
+        color: var(--color-foreground);
+        text-decoration: underline dotted #ff6b6b;
+        text-underline-offset: 4px;
+      }
+    }
+  }
+</style>

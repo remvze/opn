@@ -1,0 +1,27 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<section class="section">
+  <h2>{title}</h2>
+  <div class="content">
+    <slot />
+  </div>
+</section>
+
+<style>
+  .section {
+    &:not(:last-of-type) {
+      margin-bottom: 90px;
+    }
+
+    & h2 {
+      margin-bottom: 32px;
+      font-weight: 500;
+    }
+  }
+</style>
