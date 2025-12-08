@@ -1,7 +1,7 @@
 <div align="center">
   <h2>OPN</h2>
   <p>Your open-source bio page.</p>
-  <a href="https://opn.bio">Visit <strong>OPN</strong></a> | <a href="https://github.com/opnbio/opn-docs">Docs</a> | <a href="https://github.com/opnbio/opn-template">Template</a> 
+  <a href="https://opn.bio">Visit <strong>OPN</strong></a> | <a href="https://github.com/remvze/opn/tree/main/docs">Docs</a> | <a href="https://github.com/remvze/opn/tree/main/template">Template</a> 
 </div>
 
 ---
