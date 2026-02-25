@@ -93,7 +93,7 @@ export function Profile({ source, visits }: ProfileProps) {
   return (
     <div
       className={cn(
-        profile.style?.theme === 'light' && styles.light,
+        profile.style?.theme === 'light' ? styles.light : styles.dark,
         profile.style?.font === 'serif' && styles.serif,
       )}
     >

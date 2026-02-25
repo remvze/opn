@@ -1,73 +1,18 @@
 .light {
-  & .header {
-    & .logo {
-      background-color: var(--color-neutral-light-950);
-    }
+  color: var(--color-foreground);
+  color-scheme: light;
 
-    & .name {
-      color: var(--color-foreground-light);
-    }
+  --color-foreground: var(--color-neutral-50);
+  --color-foreground-subtle: var(--color-neutral-400);
+  --color-foreground-subtler: var(--color-neutral-500);
 
-    & .description {
-      color: var(--color-foreground-subtle-light);
-    }
-
-    & .profileVisits {
-      color: var(--color-foreground-subtler-light);
-      border-color: var(--color-neutral-light-200);
-
-      & strong {
-        color: var(--color-foreground-subtle-light);
-      }
-    }
+  & *::selection {
+    background-color: var(--color-neutral-700);
   }
+}
 
-  & .socials {
-    & a {
-      color: var(--color-foreground-light);
-      text-decoration-color: var(--color-foreground-subtler-light);
-    }
-  }
-
-  & .section {
-    & > .title {
-      color: var(--color-foreground-light);
-    }
-
-    & > .content {
-      & .text {
-        color: var(--color-foreground-subtle-light);
-      }
-    }
-  }
-
-  & .items {
-    & .item {
-      & .title {
-        color: var(--color-foreground-light);
-
-        &a {
-          text-decoration-color: var(--color-foreground-subtler-light);
-        }
-      }
-
-      & .date {
-        color: var(--color-foreground-subtler-light);
-      }
-
-      & .description {
-        color: var(--color-foreground-subtle-light);
-      }
-    }
-  }
-
-  & .footer {
-    color: var(--color-foreground-subtle-light);
-
-    & a {
-      color: var(--color-foreground-light);
-    }
-  }
+.dark {
+  color-scheme: dark;
 }
 
 .serif {
@@ -89,12 +34,12 @@
 .logo {
   position: sticky;
   top: 20px;
+  z-index: 99;
   width: 20px;
   height: 20px;
   margin-top: 120px;
-  background: var(--color-neutral-950);
+  background: light-dark(var(--color-neutral-50), var(--color-neutral-950));
   border-radius: 50%;
-  mix-blend-mode: exclusion;
 }
 
 .header {
@@ -122,7 +67,8 @@
     line-height: 0;
     color: var(--color-foreground-subtler);
     text-decoration: none;
-    border: 1px solid var(--color-neutral-200);
+    border: 1px solid
+      light-dark(var(--color-neutral-800), var(--color-neutral-200));
     border-radius: 1000px;
 
     & strong {
