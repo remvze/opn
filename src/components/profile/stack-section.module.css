@@ -1,0 +1,18 @@
+.stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.stackItem {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  font-family: var(--font-mono);
+  font-size: var(--font-2xsm);
+  color: var(--color-foreground-subtle);
+  border: 1px solid
+    light-dark(var(--color-neutral-800), var(--color-neutral-200));
+  border-radius: 0;
+}

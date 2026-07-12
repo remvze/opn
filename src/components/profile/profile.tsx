@@ -1,19 +1,16 @@
-import { type ReactNode, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { IoEye } from 'react-icons/io5';
-import { MdArrowOutward } from 'react-icons/md';
-import type { z } from 'zod/mini';
 import { padNumber } from '@/helpers/number';
 import { cn } from '@/helpers/styles';
 import { ProfileSchema } from '@/validators/profile';
 import { Container } from '../container';
+import { LinksSection } from './links-section';
+import { ListSection } from './list-section';
 import styles from './profile.module.css';
-
-type ProfileData = z.infer<typeof ProfileSchema>;
-type ProfileSection = NonNullable<ProfileData['sections']>[number];
-type ValidationError = {
-  message: string;
-  path: string;
-};
+import { Section } from './section';
+import { StackSection } from './stack-section';
+import { TextSection } from './text-section';
+import type { ProfileData, ProfileSection, ValidationError } from './types';
 
 interface ProfileProps {
   source: string;
@@ -132,7 +129,7 @@ export function Profile({ source, visits }: ProfileProps) {
         <main>
           {profile.sections?.map(section => (
             <Section key={section.title} title={section.title}>
-              {renderSectionContent(section)}
+              <ProfileSectionContent section={section} />
             </Section>
           ))}
         </main>
@@ -145,60 +142,16 @@ export function Profile({ source, visits }: ProfileProps) {
   );
 }
 
-function renderSectionContent(section: ProfileSection) {
+function ProfileSectionContent({ section }: { section: ProfileSection }) {
   switch (section.type) {
     case 'list':
-      return (
-        <div className={styles.items}>
-          {section.items.map(item => (
-            <div
-              className={styles.item}
-              key={`${item.title}:${item.url ?? item.date ?? 'item'}`}
-            >
-              {item.url ? (
-                <a className={styles.title} href={item.url}>
-                  {item.title}
-                  <span>
-                    <MdArrowOutward />
-                  </span>
-                </a>
-              ) : (
-                <p className={styles.title}>{item.title}</p>
-              )}
-
-              {item.description ? (
-                <p className={styles.description}>{item.description}</p>
-              ) : null}
-
-              {item.date ? <p className={styles.date}>({item.date})</p> : null}
-            </div>
-          ))}
-        </div>
-      );
+      return <ListSection section={section} />;
     case 'text':
-      return <p className={styles.text}>{section.content}</p>;
+      return <TextSection section={section} />;
     case 'links':
-      return (
-        <div className={styles.socials}>
-          {section.links.map(link => (
-            <a href={link.url} key={link.url}>
-              {link.title}
-            </a>
-          ))}
-        </div>
-      );
+      return <LinksSection section={section} />;
     case 'stack':
-      return (
-        <div className={styles.stack}>
-          <ul>
-            {section.stack.map(item => (
-              <li className={styles.item} key={item}>
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-      );
+      return <StackSection section={section} />;
   }
 }
 
@@ -216,7 +169,7 @@ function ProfileValidationErrors({ errors }: { errors: ValidationError[] }) {
   return (
     <Container>
       <div className={styles.errors}>
-        <h1 className={styles.title}>Wrong Format:</h1>
+        <h1 className={styles.errorTitle}>Wrong Format:</h1>
 
         {errors.map(error => (
           <p className={styles.error} key={`${error.path}:${error.message}`}>
@@ -225,16 +178,5 @@ function ProfileValidationErrors({ errors }: { errors: ValidationError[] }) {
         ))}
       </div>
     </Container>
-  );
-}
-
-function Section({ children, title }: { children: ReactNode; title: string }) {
-  return (
-    <section className={styles.section}>
-      <h2 className={styles.title}>
-        {title} <div />
-      </h2>
-      <div className={styles.content}>{children}</div>
-    </section>
   );
 }

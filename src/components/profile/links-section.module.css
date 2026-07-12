@@ -1,0 +1,14 @@
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 20px;
+
+  & a {
+    line-height: 1.6;
+    color: var(--color-foreground);
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    text-decoration-color: var(--color-foreground-subtler);
+    text-underline-offset: 4px;
+  }
+}

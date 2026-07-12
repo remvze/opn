@@ -1,0 +1,50 @@
+.items {
+  min-width: 0;
+}
+
+.item {
+  &:not(:last-of-type) {
+    margin-bottom: 28px;
+  }
+}
+
+.itemTitle,
+.itemTitleLink {
+  font-weight: 400;
+  color: var(--color-foreground);
+}
+
+.itemTitleLink {
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-decoration-color: var(--color-foreground-subtler);
+  text-underline-offset: 4px;
+
+  & span {
+    display: inline-block;
+    margin-left: 2px;
+    font-size: var(--font-sm);
+    opacity: 0;
+    transition: 0.2s;
+    transition-delay: 0.1s;
+    transform: translateY(1px) scale(0.5);
+    transform-origin: bottom left;
+  }
+
+  &:hover span {
+    opacity: 1;
+    transform: translateY(1px) scale(1);
+  }
+}
+
+.itemDate {
+  margin-top: 4px;
+  font-size: var(--font-xsm);
+  color: var(--color-foreground-subtler);
+}
+
+.itemDescription {
+  margin-top: 4px;
+  line-height: 1.6;
+  color: var(--color-foreground-subtle);
+}

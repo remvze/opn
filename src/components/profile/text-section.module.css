@@ -1,0 +1,4 @@
+.text {
+  line-height: 1.6;
+  color: var(--color-foreground-subtle);
+}

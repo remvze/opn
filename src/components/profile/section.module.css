@@ -1,0 +1,17 @@
+.section {
+  &:not(:last-of-type) {
+    padding-bottom: 80px;
+  }
+}
+
+.title {
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  margin-bottom: 32px;
+  font-weight: 500;
+}
+
+.content {
+  min-width: 0;
+}
