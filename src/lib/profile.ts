@@ -1,6 +1,6 @@
+import { eq, sql } from 'drizzle-orm';
 import { db } from '@/database/drizzle';
 import { profilesTable } from '@/database/schema';
-import { eq, sql } from 'drizzle-orm';
 
 export async function findByUsername(username: string) {
   const result = await db

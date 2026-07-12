@@ -20,11 +20,14 @@ import Section from './section.astro';
       </div>
       <h3 class="title"><span class="two">Add a bio file</span></h3>
       <p class="desc">
-        Add a <code>bio.json</code> file inside your <code>.opn</code> repository.
-        You can copy the base from <a
+        Add a <code>bio.json</code> file inside your
+        <code>.opn</code>
+        repository. You can copy the base from
+        <a
           href="https://github.com/remvze/opn/blob/main/template/bio.json"
           rel="noreferrer"
-          target="_blank">here</a
+          target="_blank"
+          >here</a
         >.
       </p>
     </li>
@@ -34,10 +37,12 @@ import Section from './section.astro';
       </div>
       <h3 class="title"><span class="three">Enter your info</span></h3>
       <p class="desc">
-        Based on the <a
+        Based on the
+        <a
           href="https://github.com/remvze/opn/blob/main/docs/schema.md"
           rel="noreferrer"
-          target="_blank">schema</a
+          target="_blank"
+          >schema</a
         >, fill <code>bio.json</code> with your information.
       </p>
     </li>
@@ -47,18 +52,138 @@ import Section from './section.astro';
       </div>
       <h3 class="title"><span class="four">Your profile is ready</span></h3>
       <p class="desc">
-        Your bio page will be generated automatically and available at <code
-          >opn.bio/@your-github-username</code
-        >.
+        Your bio page will be generated automatically and available at
+        <code>opn.bio/@your-github-username</code>.
       </p>
     </li>
   </ol>
 </Section>
 
 <style>
-  p {
-    line-height: 1.7;
+p {
+  line-height: 1.7;
+  color: var(--color-foreground-subtle);
+
+  & strong {
+    font-weight: 500;
+    color: var(--color-foreground);
+  }
+
+  & code {
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 0 2px;
+    font-family: var(--font-mono);
+    font-size: var(--font-xsm);
+    color: var(--color-foreground);
+    background: var(--color-neutral-100);
+    border-radius: 8px;
+    box-shadow: inset 0 -1px 0 var(--color-neutral-300);
+  }
+
+  & a {
+    color: var(--color-foreground);
+    text-decoration: underline dotted #ff6b6b;
+    text-underline-offset: 4px;
+
+    &.mono {
+      font-family: var(--font-mono);
+      font-size: var(--font-sm);
+    }
+  }
+}
+
+.steps {
+  list-style: none;
+
+  & li {
     color: var(--color-foreground-subtle);
+
+    & .count {
+      margin-bottom: 12px;
+
+      & span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        font-family: var(--font-mono);
+        font-size: var(--font-sm);
+        font-weight: 500;
+        color: var(--color-foreground);
+        background: linear-gradient(transparent, var(--color-neutral-100));
+        border-radius: 12px;
+
+        &.one {
+          color: #ff922b;
+          box-shadow: inset 0 -1px 0 rgb(255 146 43 / 75%);
+        }
+
+        &.two {
+          color: #f06595;
+          box-shadow: inset 0 -1px 0 rgb(240 101 149 / 75%);
+        }
+
+        &.three {
+          color: #51cf66;
+          box-shadow: inset 0 -1px 0 rgb(81 207 102 / 75%);
+        }
+
+        &.four {
+          color: #339af0;
+          box-shadow: inset 0 -1px 0 rgb(51 154 240 / 75%);
+        }
+      }
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 32px;
+    }
+
+    & .title {
+      margin-bottom: 4px;
+      font-weight: 500;
+
+      & span {
+        --color: red;
+
+        color: var(--color-foreground);
+        background-image: linear-gradient(
+          135deg,
+          var(--color),
+          var(--color-foreground),
+          var(--color-foreground)
+        );
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        &::selection {
+          -webkit-text-fill-color: var(--color-foreground);
+        }
+
+        &.one {
+          --color: #ff922b;
+        }
+
+        &.two {
+          --color: #f06595;
+        }
+
+        &.three {
+          --color: #51cf66;
+        }
+
+        &.four {
+          --color: #339af0;
+        }
+      }
+    }
+
+    & .desc {
+      max-width: 375px;
+      text-wrap: balance;
+    }
 
     & strong {
       font-weight: 500;
@@ -81,128 +206,7 @@ import Section from './section.astro';
       color: var(--color-foreground);
       text-decoration: underline dotted #ff6b6b;
       text-underline-offset: 4px;
-
-      &.mono {
-        font-family: var(--font-mono);
-        font-size: var(--font-sm);
-      }
     }
   }
-
-  .steps {
-    list-style: none;
-
-    & li {
-      color: var(--color-foreground-subtle);
-
-      & .count {
-        margin-bottom: 12px;
-
-        & span {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 40px;
-          height: 40px;
-          font-family: var(--font-mono);
-          font-size: var(--font-sm);
-          font-weight: 500;
-          color: var(--color-foreground);
-          background: linear-gradient(transparent, var(--color-neutral-100));
-          border-radius: 12px;
-
-          &.one {
-            color: #ff922b;
-            box-shadow: inset 0 -1px 0 rgb(255 146 43 / 75%);
-          }
-
-          &.two {
-            color: #f06595;
-            box-shadow: inset 0 -1px 0 rgb(240 101 149 / 75%);
-          }
-
-          &.three {
-            color: #51cf66;
-            box-shadow: inset 0 -1px 0 rgb(81 207 102 / 75%);
-          }
-
-          &.four {
-            color: #339af0;
-            box-shadow: inset 0 -1px 0 rgb(51 154 240 / 75%);
-          }
-        }
-      }
-
-      &:not(:last-of-type) {
-        margin-bottom: 32px;
-      }
-
-      & .title {
-        margin-bottom: 4px;
-        font-weight: 500;
-
-        & span {
-          --color: red;
-
-          color: var(--color-foreground);
-          background-image: linear-gradient(
-            135deg,
-            var(--color),
-            var(--color-foreground),
-            var(--color-foreground)
-          );
-          background-clip: text;
-          -webkit-text-fill-color: transparent;
-
-          &::selection {
-            -webkit-text-fill-color: var(--color-foreground);
-          }
-
-          &.one {
-            --color: #ff922b;
-          }
-
-          &.two {
-            --color: #f06595;
-          }
-
-          &.three {
-            --color: #51cf66;
-          }
-
-          &.four {
-            --color: #339af0;
-          }
-        }
-      }
-
-      & .desc {
-        max-width: 375px;
-        text-wrap: balance;
-      }
-
-      & strong {
-        font-weight: 500;
-        color: var(--color-foreground);
-      }
-
-      & code {
-        display: inline-block;
-        padding: 2px 8px;
-        margin: 0 2px;
-        font-family: var(--font-mono);
-        font-size: var(--font-xsm);
-        color: var(--color-foreground);
-        background: var(--color-neutral-100);
-        border-radius: 8px;
-        box-shadow: inset 0 -1px 0 var(--color-neutral-300);
-      }
-
-      & a {
-        color: var(--color-foreground);
-        text-decoration: underline dotted #ff6b6b;
-        text-underline-offset: 4px;
-      }
-    }
-  }
+}
 </style>

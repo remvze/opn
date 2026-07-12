@@ -3,7 +3,7 @@
  *
  * Outputs: public/schema.json
  *
- * Usage: npm run build:schema
+ * Usage: pnpm run build:schema
  */
 
 import { writeFileSync } from 'node:fs';

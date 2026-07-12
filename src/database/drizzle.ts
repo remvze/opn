@@ -1,7 +1,6 @@
-import { getSecret } from 'astro:env/server'; // eslint-disable-line
-
-import { drizzle } from 'drizzle-orm/neon-http';
+import { getSecret } from 'astro:env/server';
 import { neon } from '@neondatabase/serverless';
+import { drizzle } from 'drizzle-orm/neon-http';
 
 const sql = neon(getSecret('DATABASE_URL')!);
 

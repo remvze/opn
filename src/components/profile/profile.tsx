@@ -1,14 +1,12 @@
 import { useCallback, useEffect, useState } from 'react';
-import { MdArrowOutward } from 'react-icons/md';
 import { IoEye } from 'react-icons/io5';
-
-import { Container } from '../container';
-
-import styles from './profile.module.css';
-import { cn } from '@/helpers/styles';
-import { ProfileSchema } from '@/validators/profile';
+import { MdArrowOutward } from 'react-icons/md';
 import type { z } from 'zod/mini';
 import { padNumber } from '@/helpers/number';
+import { cn } from '@/helpers/styles';
+import { ProfileSchema } from '@/validators/profile';
+import { Container } from '../container';
+import styles from './profile.module.css';
 
 interface ProfileProps {
   source: string;

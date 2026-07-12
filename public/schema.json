@@ -36,9 +36,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "title"
-                  ],
+                  "required": ["title"],
                   "additionalProperties": false
                 }
               },
@@ -50,11 +48,7 @@
                 "const": "list"
               }
             },
-            "required": [
-              "items",
-              "title",
-              "type"
-            ],
+            "required": ["items", "title", "type"],
             "additionalProperties": false
           },
           {
@@ -71,11 +65,7 @@
                 "const": "text"
               }
             },
-            "required": [
-              "content",
-              "title",
-              "type"
-            ],
+            "required": ["content", "title", "type"],
             "additionalProperties": false
           },
           {
@@ -93,10 +83,7 @@
                       "type": "string"
                     }
                   },
-                  "required": [
-                    "title",
-                    "url"
-                  ],
+                  "required": ["title", "url"],
                   "additionalProperties": false
                 }
               },
@@ -108,11 +95,7 @@
                 "const": "links"
               }
             },
-            "required": [
-              "links",
-              "title",
-              "type"
-            ],
+            "required": ["links", "title", "type"],
             "additionalProperties": false
           }
         ]
@@ -153,10 +136,6 @@
       "const": 1
     }
   },
-  "required": [
-    "description",
-    "name",
-    "version"
-  ],
+  "required": ["description", "name", "version"],
   "additionalProperties": false
 }

@@ -1,7 +1,7 @@
 :root {
-  --font-sans: 'Geist', sans-serif;
-  --font-serif: 'Lora', serif;
-  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: "Geist", sans-serif;
+  --font-serif: "Lora", serif;
+  --font-mono: "IBM Plex Mono", monospace;
 
   /* Font Sizes */
   --font-base-size: 1rem;
