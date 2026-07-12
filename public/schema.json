@@ -97,6 +97,26 @@
             },
             "required": ["links", "title", "type"],
             "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "stack": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string",
+                "const": "stack"
+              }
+            },
+            "required": ["stack", "title", "type"],
+            "additionalProperties": false
           }
         ]
       }

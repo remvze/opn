@@ -15,10 +15,6 @@
     "format": "biome format --write .",
     "prepare": "husky install",
     "commit": "git-cz",
-    "release": "standard-version --no-verify",
-    "release:major": "pnpm run release -- --release-as major",
-    "release:minor": "pnpm run release -- --release-as minor",
-    "release:patch": "pnpm run release -- --release-as patch",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio"
@@ -52,8 +48,7 @@
     "husky": "8.0.3",
     "lint-staged": "15.2.0",
     "postcss-html": "1.6.0",
-    "postcss-nesting": "12.0.2",
-    "standard-version": "9.5.0"
+    "postcss-nesting": "12.0.2"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "4.9.5"

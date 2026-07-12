@@ -10,7 +10,7 @@ Create a public repository in your GitHub account with the name:
 .opn
 ```
 
-> **Note**: The name must be exactly `.opn`, including the dot at the beginning.
+> Note: The name must be exactly `.opn`, including the leading dot.
 
 ### 2. Add a `bio.json` File
 
@@ -20,11 +20,11 @@ Inside the `.opn` repository, create a file named:
 bio.json
 ```
 
-This file will contain all the data shown on your OPN profile.
+This file contains all the data shown on your OPN profile.
 
 ### 3. Fill in Your Bio Data
 
-Here’s a basic example of what your `bio.json` might look like:
+Here is a basic example of what your `bio.json` might look like:
 
 ```json
 {
@@ -45,14 +45,19 @@ Here’s a basic example of what your `bio.json` might look like:
           "url": "https://github.com/example"
         }
       ]
+    },
+    {
+      "title": "Stack",
+      "type": "stack",
+      "stack": ["Astro", "TypeScript", "React"]
     }
   ]
 }
 ```
 
-> You can customize this with more fields and sections; see the [full schema](/schema.md) for details.
+> You can customize this with more fields and sections. See the [full schema](/schema.md) for details.
 
-### You're Live!
+### You're Live
 
 Once your `.opn` repo and `bio.json` file are public, your OPN profile is live at:
 
@@ -60,6 +65,6 @@ Once your `.opn` repo and `bio.json` file are public, your OPN profile is live a
 https://opn.bio/@your-github-username
 ```
 
-To update your profile, simply edit your `bio.json` file, no need to do anything else.
+To update your profile, simply edit your `bio.json` file.
 
-> **Note**: GitHub may cache your `bio.json` file, so changes might take a few minutes to appear on your OPN profile.
+> Note: GitHub may cache your `bio.json` file, so changes might take a few minutes to appear on your OPN profile.

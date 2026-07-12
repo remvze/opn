@@ -187,6 +187,18 @@ function renderSectionContent(section: ProfileSection) {
           ))}
         </div>
       );
+    case 'stack':
+      return (
+        <div className={styles.stack}>
+          <ul>
+            {section.stack.map(item => (
+              <li className={styles.item} key={item}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
   }
 }
 

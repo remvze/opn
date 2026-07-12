@@ -34,9 +34,22 @@ const LinksSectionSchema = z.object({
   type: z.literal('links', { error: "Type must be 'links'." }),
 });
 
+const StackSectionSchema = z.object({
+  stack: z.array(z.string({ error: 'Stack item must be a string.' }), {
+    error: 'Stack must be an array.',
+  }),
+  title: z.string({ error: 'Section title is required.' }),
+  type: z.literal('stack', { error: "Type must be 'stack'." }),
+});
+
 const SectionSchema = z.union(
-  [ListSectionSchema, TextSectionSchema, LinksSectionSchema],
-  { error: 'Section must be a valid list, text, or links section.' },
+  [
+    ListSectionSchema,
+    TextSectionSchema,
+    LinksSectionSchema,
+    StackSectionSchema,
+  ],
+  { error: 'Section must be a valid list, text, links, or stack section.' },
 );
 
 const ProfileSchema = z.object({
